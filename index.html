@@ -14,39 +14,28 @@ button:focus { outline: none; }
 @keyframes slideIn { from { transform: translateX(-100%); } to { transform: translateX(0); } }
 @keyframes slideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-
-/* Mobile vertical timeline */
+@keyframes popIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+.chip { border-radius: 20px; padding: 4px 12px; font-size: 11px; font-weight: 700; letter-spacing: 1px; cursor: pointer; text-transform: uppercase; border: none; transition: all 0.15s; }
+.chip.active { background: #c53030; color: #fff; }
+.chip.inactive { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.1); }
+.chip-mobile { border-radius: 16px; padding: 6px 14px; font-size: 11px; font-weight: 700; letter-spacing: 0.5px; cursor: pointer; border: none; }
+.chip-mobile.active { background: #c53030; color: #fff; }
+.chip-mobile.inactive { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.6); border: 1px solid rgba(255,255,255,0.1); }
+.zbtn { width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; color: #fff; background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.2); border-radius: 50%; cursor: pointer; }
+.zbtn:hover { background: rgba(255,255,255,0.1); }
+.edge-arrow { position: absolute; top: 50%; transform: translateY(-50%); z-index: 30; width: 40px; height: 72px; background: rgba(184,47,50,0.85); backdrop-filter: blur(8px); border: none; color: #fff; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+.edge-arrow:hover { background: rgba(184,47,50,1); }
+.edge-arrow.left { left: 0; border-radius: 0 8px 8px 0; box-shadow: 2px 0 16px rgba(0,0,0,0.4); }
+.edge-arrow.right { right: 0; border-radius: 8px 0 0 8px; box-shadow: -2px 0 16px rgba(0,0,0,0.4); }
 .mobile-spine { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; width: 24px; }
 .mobile-dot { width: 10px; height: 10px; border-radius: 50%; background: #c53030; box-shadow: 0 0 8px rgba(197,48,48,0.5); flex-shrink: 0; margin-top: 4px; }
 .mobile-line { flex: 1; width: 2px; background: rgba(255,255,255,0.1); margin-top: 4px; }
 .mobile-card { background: #3d4a6b; border-radius: 10px; overflow: hidden; cursor: pointer; box-shadow: 0 4px 16px rgba(0,0,0,0.5), 0 1px 4px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.08); transition: transform 0.2s; }
 .mobile-card:active { transform: scale(0.98); }
-
-/* Filter chips */
-.chip { border-radius: 20px; padding: 4px 12px; font-size: 11px; font-weight: 700; letter-spacing: 1px; cursor: pointer; text-transform: uppercase; border: none; transition: all 0.15s; }
-.chip.active { background: #c53030; color: #fff; border: none; }
-.chip.inactive { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.1); }
-.chip-mobile { border-radius: 16px; padding: 6px 14px; font-size: 11px; font-weight: 700; letter-spacing: 0.5px; cursor: pointer; border: none; }
-.chip-mobile.active { background: #c53030; color: #fff; }
-.chip-mobile.inactive { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.6); border: 1px solid rgba(255,255,255,0.1); }
-
-/* Zoom buttons */
-.zbtn { width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; color: #fff; background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.2); border-radius: 50%; cursor: pointer; }
-.zbtn:hover { background: rgba(255,255,255,0.1); }
-
-/* Desktop cards */
-.tcard { position: absolute; cursor: pointer; transition: transform 0.2s ease; }
-.tcard:hover { transform: scale(1.05); }
-.tcard-inner { background: #3d4a6b; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); }
-.tcard.selected .tcard-inner { border: 2px solid #c53030; }
-.tcard-shadow { box-shadow: 0 4px 16px rgba(0,0,0,0.5), 0 1px 4px rgba(0,0,0,0.3); }
-.tcard:hover .tcard-shadow { box-shadow: 0 8px 28px rgba(0,0,0,0.7); }
-
-/* Edge arrows */
-.edge-arrow { position: absolute; top: 50%; transform: translateY(-50%); z-index: 30; width: 40px; height: 72px; background: rgba(184,47,50,0.85); backdrop-filter: blur(8px); border: none; color: #fff; cursor: pointer; display: flex; align-items: center; justify-content: center; }
-.edge-arrow:hover { background: rgba(184,47,50,1); }
-.edge-arrow.left { left: 0; border-radius: 0 8px 8px 0; box-shadow: 2px 0 16px rgba(0,0,0,0.4); }
-.edge-arrow.right { right: 0; border-radius: 8px 0 0 8px; box-shadow: -2px 0 16px rgba(0,0,0,0.4); }
+.share-input { width: 100%; background: #fff; border: 2px solid #e2e2e2; border-radius: 6px; padding: 12px 14px; font-size: 14px; color: #1a1a1a; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+.share-input:focus { outline: none; border-color: #c53030; }
+.copy-btn { padding: 12px 24px; background: #1a1a2e; color: #fff; border: none; border-radius: 6px; font-size: 14px; font-weight: 600; cursor: pointer; white-space: nowrap; transition: background 0.15s; }
+.copy-btn:hover { background: #2a2a4e; }
 </style>
 </head>
 <body>
@@ -64,83 +53,74 @@ const placeholderImg = (id, hue) => {
 
 const EVENTS = [
   { id:1, year:1754, month:1, label:"Jan 1754", type:"STORY", title:"\u201CJoin, or Die\u201D Published", description:"Benjamin Franklin publishes the famous \"Join, or Die\" political cartoon in The Pennsylvania Gazette, urging colonial unity against the French and Native American threats.", imageCaption:"The Pennsylvania Gazette, Page 2. Published May 9, 1754. | Credit: Library of Congress", sections:[
-    { title:"The Power of a Single Image", content:"In an era before mass media, Benjamin Franklin understood the persuasive power of a simple visual. The \"Join, or Die\" cartoon depicted a snake severed into eight segments, each labeled with a colony or region.\n\nThe cartoon appeared alongside an editorial arguing that the colonies needed to band together. It was reprinted in nearly every newspaper in the colonies within weeks." },
-    { title:"Franklin's Political Gambit", content:"Franklin didn't create the cartoon on a whim. It was part of a calculated political campaign to build support for his Albany Plan of Union.\n\nThe plan called for a Grand Council of delegates chosen by the colonial assemblies, presided over by a President-General appointed by the Crown." },
-    { title:"Legacy and Reuse", content:"The \"Join, or Die\" image took on new life during the Stamp Act crisis of 1765. By 1774, it had become one of the most recognizable images in the colonies.\n\nPaul Revere adapted the design for the masthead of The Massachusetts Spy, and variations appeared throughout the Revolutionary War." }
+    { title:"The Power of a Single Image", content:"In an era before mass media, Benjamin Franklin understood the persuasive power of a simple visual. The \"Join, or Die\" cartoon depicted a snake severed into eight segments.\n\nThe cartoon appeared alongside an editorial arguing that the colonies needed to band together. It was reprinted in nearly every newspaper in the colonies within weeks." },
+    { title:"Franklin's Political Gambit", content:"Franklin didn't create the cartoon on a whim. It was part of a calculated political campaign to build support for his Albany Plan of Union.\n\nThe plan called for a Grand Council of delegates chosen by the colonial assemblies." },
+    { title:"Legacy and Reuse", content:"The \"Join, or Die\" image took on new life during the Stamp Act crisis of 1765. By 1774, it had become one of the most recognizable images in the colonies.\n\nPaul Revere adapted the design for the masthead of The Massachusetts Spy." }
   ]},
-  { id:2, year:1754, month:3, label:"Mar 1754", type:"STORY", title:"Albany Congress Convenes", description:"Delegates from seven colonies gather in Albany, New York, to discuss a unified defense against the French. Benjamin Franklin presents his Albany Plan of Union.", sections:[
-    { title:"The Iroquois Question", content:"The official purpose of the Albany Congress was to negotiate with the Iroquois Confederacy, whose alliance was critical to colonial defense." },
-    { title:"Seven Colonies, Seven Agendas", content:"Twenty-four delegates from seven colonies attended. Each delegation arrived with its own priorities and jealousies." },
-    { title:"A Plan Rejected, A Seed Planted", content:"When the Albany Plan was sent to the colonial legislatures for ratification, every single one rejected it." }
+  { id:2, year:1754, month:3, label:"Mar 1754", type:"STORY", title:"Albany Congress Convenes", description:"Delegates from seven colonies gather in Albany, New York, to discuss a unified defense against the French.", sections:[
+    { title:"The Iroquois Question", content:"The official purpose was to negotiate with the Iroquois Confederacy, whose alliance was critical to colonial defense." },
+    { title:"Seven Colonies, Seven Agendas", content:"Twenty-four delegates from seven colonies attended. Each delegation arrived with its own priorities." },
+    { title:"A Plan Rejected, A Seed Planted", content:"Every single colonial legislature rejected the Albany Plan. The assemblies feared losing their autonomy." }
   ]},
-  { id:3, year:1754, month:5, label:"May 1754", type:"STORY", title:"Washington\u2019s First Battle", description:"A young George Washington leads a colonial militia into the Ohio Valley to challenge French expansion. The ensuing skirmish at Jumonville Glen sparks a global conflict.", sections:[
-    { title:"A 22-Year-Old Commander", content:"George Washington was just 22 years old when sent into the Ohio Valley with a small force of militia. He had no formal military training." },
-    { title:"The Jumonville Affair", content:"On May 28, 1754, Washington surprised a French encampment. The French commander Jumonville was killed along with nine of his men." },
-    { title:"Global Consequences", content:"The skirmish at Jumonville Glen ignited the French and Indian War, which expanded into the global Seven Years' War." }
+  { id:3, year:1754, month:5, label:"May 1754", type:"STORY", title:"Washington\u2019s First Battle", description:"A young George Washington leads a colonial militia into the Ohio Valley. The ensuing skirmish at Jumonville Glen sparks a global conflict.", sections:[
+    { title:"A 22-Year-Old Commander", content:"George Washington was just 22 years old when sent into the Ohio Valley. He had no formal military training." },
+    { title:"The Jumonville Affair", content:"On May 28, 1754, Washington surprised a French encampment. The French commander was killed along with nine of his men." },
+    { title:"Global Consequences", content:"The skirmish ignited the French and Indian War, which expanded into the global Seven Years' War." }
   ]},
-  { id:4, year:1754, month:6, label:"Jun 1754", type:"QUOTE", title:"Fort Necessity Built", quoteAuthor:"George Washington", description:"Washington hastily constructs Fort Necessity in the Great Meadows of Pennsylvania as a defensive position." },
-  { id:5, year:1754, month:7, label:"Jul 1754", type:"STORY", title:"Battle of Fort Necessity", description:"French and Native American forces surround Fort Necessity. After a day of fighting in heavy rain, Washington negotiates surrender.", sections:[
-    { title:"A Desperate Defense", content:"Fort Necessity was little more than a circular palisade. On July 3, 1754, roughly 700 French soldiers and Native warriors descended on the fort." },
-    { title:"The Surrender Document", content:"Washington agreed to negotiate. But the surrender document, written in French, contained an admission to the \"assassination\" of Jumonville." }
+  { id:4, year:1754, month:6, label:"Jun 1754", type:"QUOTE", title:"Fort Necessity Built", quoteAuthor:"George Washington", description:"Washington hastily constructs Fort Necessity as a defensive position." },
+  { id:5, year:1754, month:7, label:"Jul 1754", type:"STORY", title:"Battle of Fort Necessity", description:"French and Native American forces surround Fort Necessity. Washington negotiates surrender.", sections:[
+    { title:"A Desperate Defense", content:"Fort Necessity was little more than a circular palisade. Roughly 700 French soldiers and Native warriors descended on the fort." },
+    { title:"The Surrender Document", content:"Washington agreed to negotiate. The surrender document contained an admission to the \"assassination\" of Jumonville." }
   ]},
-  { id:6, year:1754, month:8, label:"Aug 1754", type:"STORY", title:"Washington Surrenders Fort", description:"Under the terms of surrender, Washington and his men march out with honors of war." },
-  { id:7, year:1754, month:9, label:"Sep 1754", type:"QUOTE", title:"Albany Plan Rejected", quoteAuthor:"Benjamin Franklin", description:"The Albany Plan of Union is rejected by every colonial legislature and by the British Crown." },
+  { id:6, year:1754, month:8, label:"Aug 1754", type:"STORY", title:"Washington Surrenders Fort", description:"Washington and his men march out with honors of war." },
+  { id:7, year:1754, month:9, label:"Sep 1754", type:"QUOTE", title:"Albany Plan Rejected", quoteAuthor:"Benjamin Franklin", description:"The Albany Plan is rejected by every colonial legislature and by the British Crown." },
   { id:8, year:1754, month:10, label:"Oct 1754", type:"STORY", title:"Colonial Militias Mobilize", description:"Colonial governors begin raising militia forces across Virginia, Pennsylvania, and Maryland." },
-  { id:9, year:1754, month:11, label:"Nov 1754", type:"STORY", title:"French Fortify Ohio Valley", description:"French forces consolidate their hold on the Ohio Valley, strengthening Fort Duquesne." },
-  { id:10, year:1754, month:12, label:"Dec 1754", type:"STORY", title:"British Parliament Debates", description:"News of Washington\u2019s defeat reaches London, sparking heated debate in Parliament." },
-  { id:11, year:1755, month:4, label:"Apr 1755", type:"STORY", title:"Braddock Arrives in Virginia", description:"General Edward Braddock arrives with two regiments of British regulars." },
-  { id:12, year:1755, month:7, label:"Jul 1755", type:"STORY", title:"Braddock\u2019s Defeat", description:"Braddock\u2019s Defeat at the Battle of the Monongahela. General Braddock was mortally wounded, and nearly two-thirds of the British force were casualties.", sections:[
-    { title:"The March to Disaster", content:"Nearly 1,400 British regulars and 450 colonial militia set out from Fort Cumberland in June 1755, carving a road through dense forest." },
-    { title:"Ambush at the Monongahela", content:"On July 9, the British walked into an ambush. Of 1,469 men engaged, 977 were killed or wounded \u2014 a 67 percent casualty rate." },
-    { title:"Washington's Survival", content:"Two horses were killed beneath Washington, and four musket balls tore through his coat without touching his body." }
+  { id:9, year:1754, month:11, label:"Nov 1754", type:"STORY", title:"French Fortify Ohio Valley", description:"French forces strengthen Fort Duquesne and establish supply lines from Canada." },
+  { id:10, year:1754, month:12, label:"Dec 1754", type:"STORY", title:"British Parliament Debates", description:"News of Washington\u2019s defeat sparks heated debate in Parliament." },
+  { id:11, year:1755, month:4, label:"Apr 1755", type:"STORY", title:"Braddock Arrives in Virginia", description:"General Braddock arrives with two regiments of British regulars." },
+  { id:12, year:1755, month:7, label:"Jul 1755", type:"STORY", title:"Braddock\u2019s Defeat", description:"Braddock\u2019s Defeat at the Monongahela. General Braddock was mortally wounded, and nearly two-thirds were casualties.", sections:[
+    { title:"The March to Disaster", content:"Nearly 1,400 British regulars and 450 colonial militia set out, carving a road through dense forest." },
+    { title:"Ambush at the Monongahela", content:"The British walked into an ambush. Of 1,469 men engaged, 977 were killed or wounded." },
+    { title:"Washington's Survival", content:"Two horses were killed beneath Washington, four musket balls tore through his coat without touching him." }
   ]},
-  { id:13, year:1756, month:5, label:"May 1756", type:"STORY", title:"Seven Years\u2019 War Declared", description:"Britain and France formally declare war, expanding the conflict into a global struggle." },
+  { id:13, year:1756, month:5, label:"May 1756", type:"STORY", title:"Seven Years\u2019 War Declared", description:"Britain and France formally declare war, expanding the conflict globally." },
   { id:14, year:1757, month:8, label:"Aug 1757", type:"STORY", title:"Fort William Henry Falls", description:"The French under Montcalm capture Fort William Henry. The subsequent massacre shocks the colonial world." },
   { id:15, year:1758, month:7, label:"Jul 1758", type:"STORY", title:"Siege of Louisbourg", description:"A massive British amphibious assault captures the fortress of Louisbourg." },
-  { id:16, year:1759, month:9, label:"Sep 1759", type:"STORY", title:"Battle of Quebec", description:"British General Wolfe scales the cliffs to the Plains of Abraham and defeats the French. Both commanders are killed.", sections:[
-    { title:"The Impossible Climb", content:"Wolfe loaded 4,000 soldiers into flat-bottomed boats and floated silently downriver. By dawn, the entire British force stood on the Plains of Abraham." },
-    { title:"Fifteen Minutes That Changed a Continent", content:"Wolfe ordered his men to hold fire until the French were within 40 yards. Within fifteen minutes, the French line broke." },
-    { title:"The Deaths of Two Generals", content:"Wolfe was hit three times and died on the field. Montcalm was wounded and died the following morning. The city capitulated five days later." }
+  { id:16, year:1759, month:9, label:"Sep 1759", type:"STORY", title:"Battle of Quebec", description:"British General Wolfe scales the cliffs to the Plains of Abraham. Both commanders are killed.", sections:[
+    { title:"The Impossible Climb", content:"Wolfe loaded 4,000 soldiers into boats and floated silently downriver. By dawn, they stood on the Plains of Abraham." },
+    { title:"Fifteen Minutes That Changed a Continent", content:"Wolfe ordered his men to hold fire until the French were within 40 yards. The French line broke within fifteen minutes." },
+    { title:"The Deaths of Two Generals", content:"Wolfe was hit three times and died on the field. Montcalm died the following morning. The city fell five days later." }
   ]},
-  { id:17, year:1760, month:9, label:"Sep 1760", type:"STORY", title:"Montreal Surrenders", description:"The last major French stronghold in North America surrenders to British forces." },
+  { id:17, year:1760, month:9, label:"Sep 1760", type:"STORY", title:"Montreal Surrenders", description:"The last major French stronghold surrenders, ending French colonial rule." },
 ].map(e => ({ ...e, image: placeholderImg(e.id, e.type === "QUOTE" ? 40 : 200) }));
 
 const ALL_CATS = ["ALL","STORY","QUOTE","VIDEO","AUDIO CLIP"];
-const SY = 1754, EY = 1761, BPX = 200, SO = 100, CG = 36;
-const ZL = [0.5,1.0,2.0,4.0];
-const ML = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
-const BP = 768;
-const zt = z => z<=0.5?1:z<=1?2:z<=2?3:4;
-const CM = {1:4,2:4,3:8,4:Infinity}, CP = {1:180,2:200,3:220,4:0};
-const gp = (y,m,px) => SO+(y-SY+(m-1)/12)*px;
-const cd = t => t<=2?{w:185,h:56}:t===3?{w:215,h:74}:{w:250,h:280};
+const SY=1754, EY=1761, BPX=200, SO=100, CG=36;
+const ZL=[0.5,1.0,2.0,4.0];
+const ML=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+const BP=768;
+const zt=z=>z<=0.5?1:z<=1?2:z<=2?3:4;
+const CM={1:4,2:4,3:8,4:Infinity}, CP={1:180,2:200,3:220,4:0};
+const gp=(y,m,px)=>SO+(y-SY+(m-1)/12)*px;
+const cd=t=>t<=2?{w:185,h:56}:t===3?{w:215,h:74}:{w:250,h:280};
 
-function useWinSize() {
-  const [s,set] = useState({w:window.innerWidth,h:window.innerHeight});
-  useEffect(() => { const f=()=>set({w:window.innerWidth,h:window.innerHeight}); window.addEventListener("resize",f); return ()=>window.removeEventListener("resize",f); },[]);
-  return s;
-}
+function useWinSize(){const[s,set]=useState({w:window.innerWidth,h:window.innerHeight});useEffect(()=>{const f=()=>set({w:window.innerWidth,h:window.innerHeight});window.addEventListener("resize",f);return()=>window.removeEventListener("resize",f);},[]);return s;}
 
-function layoutEvts(evts,ppY,cW,cH,tier) {
-  const wp = evts.map(e=>({...e,pos:gp(e.year,e.month,ppY)}));
-  if(tier===4){ const r=[]; let t=true; wp.forEach(e=>{r.push({...e,side:t?"top":"bottom",lane:0,leftPos:e.pos,clusterId:-1});t=!t;}); return {cards:r,badges:[]}; }
-  const th=CP[tier],mx=CM[tier],cls=[]; let c=[];
-  wp.forEach(e=>{ if(!c.length||(th>0&&e.pos-c[0].pos<th))c.push(e); else{cls.push(c);c=[e];} }); if(c.length)cls.push(c);
-  const r=[],bd=[]; let tp=true;
-  cls.forEach((cl,ci)=>{
-    const vis=cl.slice(0,mx),hid=cl.length-vis.length,ln={top:[],bottom:[]};
+function layoutEvts(evts,ppY,cW,cH,tier){
+  const wp=evts.map(e=>({...e,pos:gp(e.year,e.month,ppY)}));
+  if(tier===4){const r=[];let t=true;wp.forEach(e=>{r.push({...e,side:t?"top":"bottom",lane:0,leftPos:e.pos,clusterId:-1});t=!t;});return{cards:r,badges:[]};}
+  const th=CP[tier],mx=CM[tier],cls=[];let c=[];
+  wp.forEach(e=>{if(!c.length||(th>0&&e.pos-c[0].pos<th))c.push(e);else{cls.push(c);c=[e];}});if(c.length)cls.push(c);
+  const r=[],bd=[];let tp=true;
+  cls.forEach((cl,ci)=>{const vis=cl.slice(0,mx),hid=cl.length-vis.length,ln={top:[],bottom:[]};
     if(hid>0)bd.push({cid:ci,cx:(cl[0].pos+cl[cl.length-1].pos)/2,hc:hid,yr:cl[0].year});
-    vis.forEach(ev=>{
-      const l=ev.pos,ri=l+cW+10;
-      const tryP=s=>{const sl=ln[s];for(let i=0;i<sl.length;i++)if(l>=sl[i]){sl[i]=ri;return{side:s,lane:i};}if(sl.length<3){sl.push(ri);return{side:s,lane:sl.length-1};}return null;};
+    vis.forEach(ev=>{const l=ev.pos,ri=l+cW+10;const tryP=s=>{const sl=ln[s];for(let i=0;i<sl.length;i++)if(l>=sl[i]){sl[i]=ri;return{side:s,lane:i};}if(sl.length<3){sl.push(ri);return{side:s,lane:sl.length-1};}return null;};
       const p=tryP(tp?"top":"bottom")||tryP(tp?"bottom":"top")||(()=>{ln[tp?"top":"bottom"][0]=ri;return{side:tp?"top":"bottom",lane:0};})();
-      r.push({...ev,...p,leftPos:l,clusterId:ci}); tp=!tp;
-    });
-  });
-  return {cards:r,badges:bd};
+      r.push({...ev,...p,leftPos:l,clusterId:ci});tp=!tp;});});
+  return{cards:r,badges:bd};
 }
 
-const Ico = ({type,size=16}) => {
+const Ico=({type,size=16})=>{
   const p={width:size,height:size,viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:2,strokeLinecap:"round",strokeLinejoin:"round"};
   const m={
     plus:<svg {...p}><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>,
@@ -150,14 +130,69 @@ const Ico = ({type,size=16}) => {
     chevR:<svg {...p}><polyline points="9 18 15 12 9 6"/></svg>,
     x:<svg {...p}><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>,
     filter:<svg {...p}><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>,
+    share:<svg {...p}><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>,
+    link:<svg {...p}><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>,
   };
   return m[type]||null;
 };
 
+// ─── Share Modal ─────────────────────────────────────────────────────
+const ShareModal=({event,onClose})=>{
+  const [copied,setCopied]=useState(false);
+  if(!event)return null;
+  const slug=event.title.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'');
+  const url=`${window.location.origin}${window.location.pathname}#event-${event.id}-${slug}`;
+  const doCopy=()=>{navigator.clipboard.writeText(url).then(()=>{setCopied(true);setTimeout(()=>setCopied(false),2000);}).catch(()=>{const el=document.createElement("textarea");el.value=url;document.body.appendChild(el);el.select();document.execCommand("copy");document.body.removeChild(el);setCopied(true);setTimeout(()=>setCopied(false),2000);});};
+  return(
+    <div style={{position:"fixed",inset:0,zIndex:300,display:"flex",alignItems:"center",justifyContent:"center",padding:20}} onClick={onClose}>
+      <div style={{position:"absolute",inset:0,background:"rgba(0,0,0,0.6)",backdropFilter:"blur(4px)"}}/>
+      <div onClick={e=>e.stopPropagation()} style={{position:"relative",zIndex:1,background:"#fff",borderRadius:12,padding:24,width:"100%",maxWidth:480,animation:"popIn 0.2s ease-out",boxShadow:"0 20px 60px rgba(0,0,0,0.4)"}}>
+        <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:20}}>
+          <h3 style={{fontFamily:"Georgia,serif",fontSize:18,fontWeight:700,color:"#1a1a1a",margin:0}}>Sharing link</h3>
+          <button onClick={onClose} style={{width:32,height:32,borderRadius:"50%",background:"#f0f0f0",border:"none",display:"flex",alignItems:"center",justifyContent:"center",cursor:"pointer",color:"#666"}}><Ico type="x" size={14}/></button>
+        </div>
+        <div style={{fontSize:12,color:"#888",marginBottom:12}}>{event.title} \u2014 {event.label}</div>
+        <div style={{display:"flex",gap:8}}>
+          <input className="share-input" readOnly value={url} onClick={e=>e.target.select()}/>
+          <button className="copy-btn" onClick={doCopy}>{copied?"Copied!":"Copy link"}</button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// ─── Share Button (small) ────────────────────────────────────────────
+const ShareBtn=({event,onShare,size=14,style:st={}})=>(
+  <button onClick={e=>{e.stopPropagation();onShare(event);}} style={{width:28,height:28,borderRadius:"50%",background:"rgba(255,255,255,0.1)",border:"1px solid rgba(255,255,255,0.15)",display:"flex",alignItems:"center",justifyContent:"center",cursor:"pointer",color:"rgba(255,255,255,0.6)",transition:"all 0.15s",flexShrink:0,...st}}
+    onMouseEnter={e=>{e.currentTarget.style.background="rgba(255,255,255,0.2)";e.currentTarget.style.color="#fff";}}
+    onMouseLeave={e=>{e.currentTarget.style.background="rgba(255,255,255,0.1)";e.currentTarget.style.color="rgba(255,255,255,0.6)";}}>
+    <Ico type="link" size={size}/>
+  </button>
+);
+
+// ─── Hover Preview Card (tier 4 style) ──────────────────────────────
+const HoverPreview=({event,left,top,side})=>{
+  const w=250,h=280;
+  const py=side==="top"?top-h-20:top+20;
+  return(
+    <div style={{position:"absolute",left:left,top:py,width:w,zIndex:200,pointerEvents:"none",animation:"popIn 0.15s ease-out"}}>
+      <div style={{background:"#3d4a6b",borderRadius:8,overflow:"hidden",height:h,display:"flex",flexDirection:"column",border:"2px solid rgba(255,255,255,0.2)",boxShadow:"0 16px 48px rgba(0,0,0,0.7),0 4px 12px rgba(0,0,0,0.4)"}}>
+        <div style={{padding:"12px 14px 8px"}}>
+          <div style={{fontSize:10,fontWeight:700,letterSpacing:"1.5px",color:"#94a1b2",textTransform:"uppercase"}}>{event.type}</div>
+          <div style={{fontSize:14,fontWeight:700,color:"#fff",fontFamily:"Georgia,serif",lineHeight:1.3,marginTop:4}}>{event.title}</div>
+          <div style={{fontSize:12,color:"#94a1b2",marginTop:4}}>{event.label}</div>
+          {event.quoteAuthor&&<div style={{fontSize:11,color:"rgba(255,255,255,0.5)",marginTop:4,textTransform:"uppercase",letterSpacing:"1px"}}>\u2014 {event.quoteAuthor}</div>}
+        </div>
+        {event.image&&<div style={{flex:1,overflow:"hidden"}}><img src={event.image} alt="" style={{width:"100%",height:"100%",objectFit:"cover",opacity:0.85}}/></div>}
+      </div>
+    </div>
+  );
+};
+
 // ─── Mobile Card ─────────────────────────────────────────────────────
-const MobCard = ({ev,onClick,isExp}) => {
-  const hasSec = ev.sections && ev.sections.length > 0;
-  return (
+const MobCard=({ev,onClick,isExp,onShare})=>{
+  const hasSec=ev.sections&&ev.sections.length>0;
+  return(
     <div style={{display:"flex",gap:12,position:"relative"}}>
       <div className="mobile-spine"><div className="mobile-dot"/><div className="mobile-line"/></div>
       <div style={{flex:1,paddingBottom:20}}>
@@ -170,6 +205,7 @@ const MobCard = ({ev,onClick,isExp}) => {
               <div style={{fontSize:13,fontWeight:700,color:"#fff",fontFamily:"Georgia,serif",lineHeight:1.3}}>{ev.title}</div>
               {ev.quoteAuthor&&<div style={{fontSize:10,color:"rgba(255,255,255,0.4)",marginTop:2}}>\u2014 {ev.quoteAuthor}</div>}
             </div>
+            <ShareBtn event={ev} onShare={onShare} size={12} style={{width:24,height:24}}/>
           </div>
           {isExp&&(<div style={{padding:"0 12px 12px"}}><div style={{height:1,background:"rgba(255,255,255,0.08)",marginBottom:10}}/><p style={{fontSize:13,color:"rgba(255,255,255,0.7)",lineHeight:1.7,margin:0}}>{ev.description}</p><button onClick={e=>{e.stopPropagation();onClick();}} style={{background:"none",border:"none",color:"#c53030",fontWeight:700,fontSize:12,letterSpacing:"1px",textTransform:"uppercase",padding:0,marginTop:10,cursor:"pointer"}}>{hasSec?"Read Full Story \u2192":"View Details \u2192"}</button></div>)}
           {!isExp&&<div style={{padding:"0 12px 8px"}}><div style={{fontSize:11,color:"rgba(255,255,255,0.35)"}}>Tap to expand</div></div>}
@@ -179,26 +215,25 @@ const MobCard = ({ev,onClick,isExp}) => {
   );
 };
 
-// ─── Mobile Bottom Sheet ─────────────────────────────────────────────
-const BSheet = ({ev,onClose,onNext,onPrev,hasN,hasP}) => {
-  const [more,setMore]=useState(false);
-  const ref=useRef(null);
-  const dyRef=useRef(null), dxRef=useRef(null);
-  const [drag,setDrag]=useState(0);
+// ─── Bottom Sheet ────────────────────────────────────────────────────
+const BSheet=({ev,onClose,onNext,onPrev,hasN,hasP,onShare})=>{
+  const[more,setMore]=useState(false);const ref=useRef(null);const dyRef=useRef(null),dxRef=useRef(null);const[drag,setDrag]=useState(0);
   useEffect(()=>{setMore(false);setDrag(0);if(ref.current)ref.current.scrollTop=0;},[ev?.id]);
   const ts=e=>{dyRef.current=e.touches[0].clientY;dxRef.current=e.touches[0].clientX;};
   const tm=e=>{if(dyRef.current===null)return;const d=e.touches[0].clientY-dyRef.current;if(d>0&&ref.current?.scrollTop<=0)setDrag(d);};
   const te=e=>{if(drag>120){onClose();setDrag(0);dyRef.current=null;dxRef.current=null;return;}setDrag(0);if(dxRef.current!==null&&e.changedTouches[0]){const dx=e.changedTouches[0].clientX-dxRef.current;if(Math.abs(dx)>60){dx<0?onNext():onPrev();}}dyRef.current=null;dxRef.current=null;};
-  if(!ev)return null;
-  const secs=ev.sections||[];
-  return (
+  if(!ev)return null;const secs=ev.sections||[];
+  return(
     <div style={{position:"fixed",inset:0,zIndex:200,display:"flex",flexDirection:"column",justifyContent:"flex-end"}}>
       <div onClick={onClose} style={{position:"absolute",inset:0,background:"rgba(0,0,0,0.6)",backdropFilter:"blur(4px)"}}/>
       <div onTouchStart={ts} onTouchMove={tm} onTouchEnd={te} style={{position:"relative",zIndex:1,background:"#1a2240",borderRadius:"16px 16px 0 0",maxHeight:"88vh",display:"flex",flexDirection:"column",transform:`translateY(${drag}px)`,transition:drag===0?"transform 0.3s":"none",boxShadow:"0 -8px 40px rgba(0,0,0,0.6)"}}>
         <div style={{display:"flex",justifyContent:"center",padding:"10px 0 6px"}}><div style={{width:36,height:4,borderRadius:2,background:"rgba(255,255,255,0.2)"}}/></div>
         <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",padding:"0 16px 8px"}}>
           <button onClick={onPrev} disabled={!hasP} style={{width:36,height:36,borderRadius:"50%",background:hasP?"#c53030":"rgba(255,255,255,0.05)",border:"none",color:hasP?"#fff":"rgba(255,255,255,0.2)",cursor:hasP?"pointer":"default",display:"flex",alignItems:"center",justifyContent:"center"}}><Ico type="chevL" size={16}/></button>
-          <div style={{fontSize:10,color:"rgba(255,255,255,0.3)",letterSpacing:"1px",textTransform:"uppercase"}}>Swipe to navigate</div>
+          <div style={{display:"flex",alignItems:"center",gap:8}}>
+            <span style={{fontSize:10,color:"rgba(255,255,255,0.3)",letterSpacing:"1px",textTransform:"uppercase"}}>Swipe to navigate</span>
+            <ShareBtn event={ev} onShare={onShare} size={12} style={{width:28,height:28}}/>
+          </div>
           <button onClick={onNext} disabled={!hasN} style={{width:36,height:36,borderRadius:"50%",background:hasN?"#c53030":"rgba(255,255,255,0.05)",border:"none",color:hasN?"#fff":"rgba(255,255,255,0.2)",cursor:hasN?"pointer":"default",display:"flex",alignItems:"center",justifyContent:"center"}}><Ico type="chevR" size={16}/></button>
         </div>
         <div ref={ref} style={{flex:1,overflowY:"auto",padding:"0 20px 32px",scrollbarWidth:"thin"}}>
@@ -219,15 +254,12 @@ const BSheet = ({ev,onClose,onNext,onPrev,hasN,hasP}) => {
 };
 
 // ─── Desktop Detail ──────────────────────────────────────────────────
-const Detail = ({ev,onNext,onPrev,onClose}) => {
-  const [more,setMore]=useState(false);
-  const [sticky,setSticky]=useState(false);
-  const sRef=useRef(null),tRef=useRef(null);
+const Detail=({ev,onNext,onPrev,onClose,onShare})=>{
+  const[more,setMore]=useState(false);const[sticky,setSticky]=useState(false);const sRef=useRef(null),tRef=useRef(null);
   useEffect(()=>{setMore(false);setSticky(false);if(sRef.current)sRef.current.scrollTop=0;},[ev?.id]);
   useEffect(()=>{const c=sRef.current,t=tRef.current;if(!c||!t)return;const h=()=>{const tr=t.getBoundingClientRect(),cr=c.getBoundingClientRect();setSticky(tr.bottom<cr.top+10);};c.addEventListener("scroll",h,{passive:true});return()=>c.removeEventListener("scroll",h);},[]);
-  if(!ev)return null;
-  const secs=ev.sections||[];
-  return (
+  if(!ev)return null;const secs=ev.sections||[];
+  return(
     <div style={{position:"absolute",inset:0,zIndex:50,display:"flex",flexDirection:"column"}}>
       <div style={{position:"absolute",inset:0,background:"rgba(10,14,35,0.92)",backdropFilter:"blur(8px)"}}/>
       {ev.image&&<div style={{position:"absolute",inset:0,backgroundImage:`url(${ev.image})`,backgroundSize:"cover",backgroundPosition:"center",opacity:0.06}}/>}
@@ -238,6 +270,7 @@ const Detail = ({ev,onNext,onPrev,onClose}) => {
         <span style={{fontSize:10,fontWeight:700,letterSpacing:"2px",color:"#c53030",textTransform:"uppercase"}}>{ev.type}</span>
         <span style={{fontSize:14,fontWeight:700,fontFamily:"Georgia,serif"}}>{ev.title}</span>
         <span style={{fontSize:12,color:"rgba(255,255,255,0.4)"}}>{ev.label}</span>
+        <div style={{marginLeft:"auto"}}><ShareBtn event={ev} onShare={onShare}/></div>
       </div>
       <div ref={sRef} style={{position:"relative",zIndex:10,flex:1,overflowY:"auto",scrollbarWidth:"thin"}}>
         <div style={{display:"flex",justifyContent:"center",padding:"48px 80px 60px"}}>
@@ -245,7 +278,10 @@ const Detail = ({ev,onNext,onPrev,onClose}) => {
             {ev.image&&<div style={{width:400,flexShrink:0,position:"sticky",top:48}}><div style={{background:"rgba(255,255,255,0.05)",border:"1px solid rgba(255,255,255,0.1)",padding:8,boxShadow:"0 8px 32px rgba(0,0,0,0.3)",borderRadius:4}}><img src={ev.image} alt={ev.title} style={{width:"100%",maxHeight:300,objectFit:"contain",borderRadius:2}}/></div>{ev.imageCaption&&<p style={{fontSize:11,color:"rgba(255,255,255,0.4)",marginTop:12,fontStyle:"italic",lineHeight:1.5}}>{ev.imageCaption}</p>}</div>}
             <div style={{flex:1}}>
               <div ref={tRef}>
-                <div style={{fontSize:13,fontWeight:700,letterSpacing:"2px",color:"#c53030",textTransform:"uppercase"}}>{ev.type}</div>
+                <div style={{display:"flex",alignItems:"center",gap:12}}>
+                  <div style={{fontSize:13,fontWeight:700,letterSpacing:"2px",color:"#c53030",textTransform:"uppercase"}}>{ev.type}</div>
+                  <ShareBtn event={ev} onShare={onShare}/>
+                </div>
                 <h2 style={{fontFamily:"Georgia,serif",fontSize:28,fontWeight:700,lineHeight:1.2,marginTop:8}}>{ev.title}</h2>
                 <p style={{fontSize:16,fontWeight:700,marginTop:8}}>{ev.label}</p>
                 {ev.quoteAuthor&&<p style={{fontSize:14,color:"rgba(255,255,255,0.5)",marginTop:4,textTransform:"uppercase",letterSpacing:"2px"}}>\u2014 {ev.quoteAuthor}</p>}
@@ -262,14 +298,14 @@ const Detail = ({ev,onNext,onPrev,onClose}) => {
 };
 
 // ─── Desktop Card ────────────────────────────────────────────────────
-const TCard = ({ev,idx,lp,side,lane,aY,isSel,onClick,cW,cH,tier,hId,setH}) => {
+const TCard=({ev,idx,lp,side,lane,aY,isSel,onClick,cW,cH,tier,hId,setH,onShare})=>{
   const lo=lane*(cH+12);
   const ct=side==="top"?aY-cH-CG-lo:aY+CG+lo;
   const cn=CG+lo-15;
   const ih=hId===ev.id;
-  return (
+  return(
     <div onMouseEnter={()=>setH(ev.id)} onMouseLeave={()=>setH(null)} onClick={e=>{e.stopPropagation();onClick();}}
-      style={{position:"absolute",left:lp,top:ct,width:cW,zIndex:isSel?100:ih?50:10+idx,cursor:"pointer",transform:ih?"scale(1.05)":"scale(1)",transition:"transform 0.2s"}}>
+      style={{position:"absolute",left:lp,top:ct,width:cW,zIndex:isSel?100:ih?50:10+idx,cursor:"pointer",transition:"transform 0.2s"}}>
       {tier<=2&&<div style={{display:"flex",alignItems:"center",gap:8,height:cH,background:"#3d4a6b",borderRadius:6,overflow:"hidden",border:isSel?"2px solid #c53030":"1px solid rgba(255,255,255,0.1)",boxShadow:ih?"0 8px 28px rgba(0,0,0,0.7)":"0 4px 16px rgba(0,0,0,0.5),0 1px 4px rgba(0,0,0,0.3)"}}>
         {ev.image&&<div style={{width:32,height:32,borderRadius:4,overflow:"hidden",marginLeft:8,flexShrink:0}}><img src={ev.image} alt="" style={{width:"100%",height:"100%",objectFit:"cover"}}/></div>}
         <div style={{flex:1,minWidth:0,padding:"4px 8px 4px 0"}}><div style={{fontSize:7,fontWeight:700,letterSpacing:"1.5px",color:"#94a1b2",textTransform:"uppercase"}}>{ev.type}</div><div style={{fontSize:10,fontWeight:700,color:"#fff",fontFamily:"Georgia,serif",lineHeight:1.3,overflow:"hidden",textOverflow:"ellipsis",display:"-webkit-box",WebkitLineClamp:2,WebkitBoxOrient:"vertical"}}>{ev.title}</div></div>
@@ -289,72 +325,36 @@ const TCard = ({ev,idx,lp,side,lane,aY,isSel,onClick,cW,cH,tier,hId,setH}) => {
       </div>
       <div style={{position:"absolute",left:"50%",transform:"translateX(-50%)",width:1,background:isSel?"#c53030":"rgba(255,255,255,0.2)",...(side==="top"?{top:cH+(tier===4?12:6),height:cn}:{top:-(cn+(tier===4?12:6)),height:cn})}}/>
       <div style={{position:"absolute",left:"50%",transform:"translateX(-50%)",width:8,height:8,borderRadius:"50%",background:"#c53030",boxShadow:"0 0 8px rgba(197,48,48,0.6)",zIndex:10,...(side==="top"?{top:cH+CG+lo-4}:{top:-(CG+lo)-4})}}/>
+      {/* Hover preview for small tiers */}
+      {ih&&tier<4&&<HoverPreview event={ev} left={0} top={side==="top"?0:cH} side={side}/>}
     </div>
   );
 };
 
 // ─── Axis ────────────────────────────────────────────────────────────
-const Axis = ({ppY,aY}) => {
+const Axis=({ppY,aY})=>{
   const ms=useMemo(()=>{const p=ppY/12;return p>=35?1:p>=18?3:p>=8?6:0;},[ppY]);
-  return (
+  return(
     <div style={{position:"absolute",left:0,width:"100%",top:aY-1,height:2,pointerEvents:"none"}}>
       <div style={{position:"absolute",top:0,left:0,right:0,height:2,background:"#5c6e85"}}/>
-      {Array.from({length:EY-SY+1},(_,i)=>SY+i).map(yr=>{
-        const x=gp(yr,1,ppY);
-        return (<div key={yr}><div style={{position:"absolute",left:x,top:-10,width:2,height:22,background:"#d5dde7"}}/><div style={{position:"absolute",left:x-16,top:-32,fontSize:14,fontWeight:700,color:"#e0e0e0",whiteSpace:"nowrap"}}>{yr}</div>
-          {ms>0&&Array.from({length:12},(_,i)=>i).filter(i=>i>0&&i%ms===0).map(mi=>{const mx=gp(yr,mi+1,ppY);return(<div key={`${yr}-${mi}`}><div style={{position:"absolute",left:mx,top:-5,width:1,height:11,background:"#5c6e85"}}/>{ms<=3&&<div style={{position:"absolute",left:mx-12,top:8,fontSize:11,color:"#d5dde7",whiteSpace:"nowrap"}}>{ML[mi]}</div>}</div>);})}</div>);
-      })}
+      {Array.from({length:EY-SY+1},(_,i)=>SY+i).map(yr=>{const x=gp(yr,1,ppY);return(<div key={yr}><div style={{position:"absolute",left:x,top:-10,width:2,height:22,background:"#d5dde7"}}/><div style={{position:"absolute",left:x-16,top:-32,fontSize:14,fontWeight:700,color:"#e0e0e0",whiteSpace:"nowrap"}}>{yr}</div>
+        {ms>0&&Array.from({length:12},(_,i)=>i).filter(i=>i>0&&i%ms===0).map(mi=>{const mx=gp(yr,mi+1,ppY);return(<div key={`${yr}-${mi}`}><div style={{position:"absolute",left:mx,top:-5,width:1,height:11,background:"#5c6e85"}}/>{ms<=3&&<div style={{position:"absolute",left:mx-12,top:8,fontSize:11,color:"#d5dde7",whiteSpace:"nowrap"}}>{ML[mi]}</div>}</div>);})}</div>);})}
     </div>
   );
 };
 
 // ─── Start ───────────────────────────────────────────────────────────
-const Start = ({vis,onGo,mob}) => {
+const Start=({vis,onGo,mob})=>{
   if(!vis)return null;
-  if(mob)return(
-    <div style={{position:"fixed",inset:0,zIndex:200,display:"flex",flexDirection:"column",justifyContent:"flex-end"}}>
-      <div onClick={onGo} style={{position:"absolute",inset:0,background:"rgba(0,0,0,0.5)"}}/>
-      <div style={{position:"relative",zIndex:1,background:"rgba(0,5,37,0.97)",borderRadius:"16px 16px 0 0",padding:"28px 24px 40px",animation:"slideUp 0.3s ease-out"}}>
-        <div style={{display:"flex",justifyContent:"center",marginBottom:16}}><div style={{width:36,height:4,borderRadius:2,background:"rgba(255,255,255,0.2)"}}/></div>
-        <div style={{width:40,height:2,background:"#B82F32",marginBottom:20}}/>
-        <h2 style={{fontFamily:"Georgia,serif",fontSize:22,fontWeight:900,lineHeight:1.25,marginBottom:12}}>Timeline of the<br/>American Revolution</h2>
-        <p style={{fontSize:14,color:"rgba(255,255,255,0.6)",lineHeight:1.7,marginBottom:20}}>Dive into the events and key figures that shaped the American Revolution.</p>
-        <button onClick={onGo} style={{width:"100%",padding:14,background:"#c53030",border:"none",borderRadius:8,color:"#fff",fontSize:14,fontWeight:700,letterSpacing:"1px",cursor:"pointer"}}>Explore Timeline</button>
-      </div>
-    </div>
-  );
-  return(
-    <React.Fragment>
-      <div onClick={onGo} style={{position:"absolute",inset:0,zIndex:59,background:"rgba(0,0,0,0.3)"}}/>
-      <div style={{position:"absolute",left:0,top:0,bottom:0,zIndex:60,width:320,background:"rgba(0,5,37,0.94)",backdropFilter:"blur(12px)",borderRight:"1px solid rgba(255,255,255,0.1)",display:"flex",flexDirection:"column",justifyContent:"center",padding:"48px 32px",animation:"slideIn 0.4s ease-out"}}>
-        <button onClick={onGo} style={{position:"absolute",top:16,right:16,width:32,height:32,borderRadius:"50%",background:"rgba(255,255,255,0.1)",border:"1px solid rgba(255,255,255,0.15)",display:"flex",alignItems:"center",justifyContent:"center",color:"rgba(255,255,255,0.6)",cursor:"pointer"}}><Ico type="x" size={14}/></button>
-        <div style={{width:40,height:2,background:"#B82F32",marginBottom:24}}/>
-        <h2 style={{fontFamily:"Georgia,serif",fontSize:24,fontWeight:900,lineHeight:1.25,marginBottom:16}}>Timeline of the<br/>American Revolution</h2>
-        <p style={{fontSize:14,color:"rgba(255,255,255,0.7)",lineHeight:1.7,marginBottom:24}}>Dive into the events and key figures that shaped the American Revolution.</p>
-        <div style={{display:"flex",flexDirection:"column",gap:12}}>
-          {[{ic:"\u25C0 \u25B6",lb:"Use arrows to navigate"},{ic:"\u21D4",lb:"Click & drag to pan"},{ic:"\u2190 \u2192",lb:"Keyboard arrows"}].map((h,i)=><div key={i} style={{display:"flex",alignItems:"center",gap:12}}><div style={{width:28,height:28,borderRadius:14,background:"rgba(255,255,255,0.1)",border:"1px solid rgba(255,255,255,0.15)",display:"flex",alignItems:"center",justifyContent:"center",fontSize:10,color:"rgba(255,255,255,0.6)",flexShrink:0}}>{h.ic}</div><span style={{fontSize:12,color:"rgba(255,255,255,0.5)"}}>{h.lb}</span></div>)}
-        </div>
-        <p style={{fontSize:11,color:"rgba(255,255,255,0.35)",fontStyle:"italic",marginTop:24}}>Click anywhere on the timeline to begin</p>
-      </div>
-    </React.Fragment>
-  );
+  if(mob)return(<div style={{position:"fixed",inset:0,zIndex:200,display:"flex",flexDirection:"column",justifyContent:"flex-end"}}><div onClick={onGo} style={{position:"absolute",inset:0,background:"rgba(0,0,0,0.5)"}}/><div style={{position:"relative",zIndex:1,background:"rgba(0,5,37,0.97)",borderRadius:"16px 16px 0 0",padding:"28px 24px 40px",animation:"slideUp 0.3s ease-out"}}><div style={{display:"flex",justifyContent:"center",marginBottom:16}}><div style={{width:36,height:4,borderRadius:2,background:"rgba(255,255,255,0.2)"}}/></div><div style={{width:40,height:2,background:"#B82F32",marginBottom:20}}/><h2 style={{fontFamily:"Georgia,serif",fontSize:22,fontWeight:900,lineHeight:1.25,marginBottom:12}}>Timeline of the<br/>American Revolution</h2><p style={{fontSize:14,color:"rgba(255,255,255,0.6)",lineHeight:1.7,marginBottom:20}}>Dive into the events and key figures that shaped the American Revolution.</p><button onClick={onGo} style={{width:"100%",padding:14,background:"#c53030",border:"none",borderRadius:8,color:"#fff",fontSize:14,fontWeight:700,letterSpacing:"1px",cursor:"pointer"}}>Explore Timeline</button></div></div>);
+  return(<React.Fragment><div onClick={onGo} style={{position:"absolute",inset:0,zIndex:59,background:"rgba(0,0,0,0.3)"}}/><div style={{position:"absolute",left:0,top:0,bottom:0,zIndex:60,width:320,background:"rgba(0,5,37,0.94)",backdropFilter:"blur(12px)",borderRight:"1px solid rgba(255,255,255,0.1)",display:"flex",flexDirection:"column",justifyContent:"center",padding:"48px 32px",animation:"slideIn 0.4s ease-out"}}><button onClick={onGo} style={{position:"absolute",top:16,right:16,width:32,height:32,borderRadius:"50%",background:"rgba(255,255,255,0.1)",border:"1px solid rgba(255,255,255,0.15)",display:"flex",alignItems:"center",justifyContent:"center",color:"rgba(255,255,255,0.6)",cursor:"pointer"}}><Ico type="x" size={14}/></button><div style={{width:40,height:2,background:"#B82F32",marginBottom:24}}/><h2 style={{fontFamily:"Georgia,serif",fontSize:24,fontWeight:900,lineHeight:1.25,marginBottom:16}}>Timeline of the<br/>American Revolution</h2><p style={{fontSize:14,color:"rgba(255,255,255,0.7)",lineHeight:1.7,marginBottom:24}}>Dive into the events and key figures that shaped the American Revolution.</p><div style={{display:"flex",flexDirection:"column",gap:12}}>{[{ic:"\u25C0 \u25B6",lb:"Use arrows to navigate"},{ic:"\u21D4",lb:"Click & drag to pan"},{ic:"\u2190 \u2192",lb:"Keyboard arrows"}].map((h,i)=><div key={i} style={{display:"flex",alignItems:"center",gap:12}}><div style={{width:28,height:28,borderRadius:14,background:"rgba(255,255,255,0.1)",border:"1px solid rgba(255,255,255,0.15)",display:"flex",alignItems:"center",justifyContent:"center",fontSize:10,color:"rgba(255,255,255,0.6)",flexShrink:0}}>{h.ic}</div><span style={{fontSize:12,color:"rgba(255,255,255,0.5)"}}>{h.lb}</span></div>)}</div><p style={{fontSize:11,color:"rgba(255,255,255,0.35)",fontStyle:"italic",marginTop:24}}>Click anywhere on the timeline to begin</p></div></React.Fragment>);
 };
 
 // ─── App ─────────────────────────────────────────────────────────────
-function App() {
-  const {w:wW}=useWinSize();
-  const mob=wW<BP;
+function App(){
+  const{w:wW}=useWinSize();const mob=wW<BP;
   const sRef=useRef(null);
-  const [zl,setZl]=useState(1);
-  const [selId,setSelId]=useState(null);
-  const [det,setDet]=useState(false);
-  const [start,setStart]=useState(true);
-  const [filt,setFilt]=useState("ALL");
-  const [drag,setDrag]=useState(false);
-  const [hId,setHId]=useState(null);
-  const [sI,setSI]=useState({l:0,m:1});
-  const [fOpen,setFOpen]=useState(false);
-  const [expCard,setExpCard]=useState(null);
+  const[zl,setZl]=useState(1);const[selId,setSelId]=useState(null);const[det,setDet]=useState(false);const[start,setStart]=useState(true);const[filt,setFilt]=useState("ALL");const[drag,setDrag]=useState(false);const[hId,setHId]=useState(null);const[sI,setSI]=useState({l:0,m:1});const[fOpen,setFOpen]=useState(false);const[expCard,setExpCard]=useState(null);const[shareEv,setShareEv]=useState(null);
   const dRef=useRef(null),wdRef=useRef(false);
 
   const tier=zt(zl),{w:cW,h:cH}=cd(tier);
@@ -363,21 +363,18 @@ function App() {
 
   const fil=useMemo(()=>filt==="ALL"?EVENTS:EVENTS.filter(e=>e.type===filt),[filt]);
   const lr=useMemo(()=>layoutEvts(fil,ppY,cW,cH,tier),[fil,ppY,cW,cH,tier]);
-
   const selEv=fil.find(e=>e.id===selId)||fil[0];
   const selIdx=fil.findIndex(e=>e.id===(selId||fil[0]?.id));
 
-  const zi=()=>{setZl(z=>{const i=ZL.findIndex(l=>l>=z);return ZL[Math.min(i+1,ZL.length-1)];});};
-  const zo=()=>{setZl(z=>{const i=ZL.findIndex(l=>l>=z);return ZL[Math.max(i-1,0)];});};
+  const zi=()=>setZl(z=>{const i=ZL.findIndex(l=>l>=z);return ZL[Math.min(i+1,ZL.length-1)];});
+  const zo=()=>setZl(z=>{const i=ZL.findIndex(l=>l>=z);return ZL[Math.max(i-1,0)];});
   const pL=useCallback(()=>sRef.current?.scrollBy({left:-400,behavior:"smooth"}),[]);
   const pR=useCallback(()=>sRef.current?.scrollBy({left:400,behavior:"smooth"}),[]);
   const nxt=useCallback(()=>{if(!fil.length)return;setSelId(fil[(selIdx+1)%fil.length].id);},[selIdx,fil]);
   const prv=useCallback(()=>{if(!fil.length)return;setSelId(fil[(selIdx-1+fil.length)%fil.length].id);},[selIdx,fil]);
 
   const expClust=useCallback(cid=>{
-    const cc=lr.cards.filter(e=>e.clusterId===cid);
-    const i=ZL.findIndex(z=>z>=zl);
-    const nz=ZL[Math.min(i+1,ZL.length-1)];setZl(nz);
+    const cc=lr.cards.filter(e=>e.clusterId===cid);const i=ZL.findIndex(z=>z>=zl);const nz=ZL[Math.min(i+1,ZL.length-1)];setZl(nz);
     if(cc.length&&sRef.current){const fe=cc[0],nt=zt(nz),np=nt===4?Math.max(BPX*nz,(cd(nt).w+20)*12):BPX*nz;const nc=gp(fe.year,fe.month,np);setTimeout(()=>sRef.current?.scrollTo({left:Math.max(0,nc-sRef.current.clientWidth/3),behavior:"smooth"}),50);}
   },[lr.cards,zl]);
 
@@ -388,75 +385,52 @@ function App() {
   const mm=e=>{if(!drag||!dRef.current||!sRef.current)return;const dx=e.clientX-dRef.current.x;sRef.current.scrollLeft=dRef.current.sl-dx;wdRef.current=Math.abs(dx)>5;};
   const osc=()=>{if(!sRef.current)return;setSI({l:sRef.current.scrollLeft,m:sRef.current.scrollWidth-sRef.current.clientWidth});};
 
+  const onShare=ev=>setShareEv(ev);
+
   const yg=useMemo(()=>{const g={};fil.forEach(e=>{if(!g[e.year])g[e.year]=[];g[e.year].push(e);});return Object.entries(g).sort(([a],[b])=>a-b);},[fil]);
 
-  // ─── MOBILE ────────────────────────────────────────────────────────
-  if(mob) return (
+  if(mob)return(
     <div style={{width:"100%",minHeight:"100vh",background:"#0d1117",fontFamily:"-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif",position:"relative"}}>
       <div style={{position:"absolute",inset:0,background:"radial-gradient(ellipse at 50% 20%,#2a1a0a 0%,#0d1117 70%)",opacity:0.4,pointerEvents:"none"}}/>
       <div style={{position:"sticky",top:0,zIndex:100,background:"rgba(13,17,23,0.92)",backdropFilter:"blur(12px)",borderBottom:"1px solid rgba(255,255,255,0.08)",padding:"12px 16px"}}>
         <div style={{display:"flex",alignItems:"center",justifyContent:"space-between"}}>
           <h1 style={{fontFamily:"Georgia,serif",fontSize:15,fontWeight:700,color:"#e8e0d4",margin:0}}>Timeline of the American Revolution</h1>
           <button onClick={()=>setFOpen(!fOpen)} style={{width:36,height:36,borderRadius:"50%",background:fOpen?"#c53030":"rgba(255,255,255,0.1)",border:"1px solid rgba(255,255,255,0.1)",display:"flex",alignItems:"center",justifyContent:"center",color:fOpen?"#fff":"rgba(255,255,255,0.6)",cursor:"pointer",position:"relative"}}>
-            <Ico type="filter" size={14}/>
-            {filt!=="ALL"&&<div style={{position:"absolute",top:-2,right:-2,width:8,height:8,borderRadius:"50%",background:"#c53030",border:"2px solid #0d1117"}}/>}
+            <Ico type="filter" size={14}/>{filt!=="ALL"&&<div style={{position:"absolute",top:-2,right:-2,width:8,height:8,borderRadius:"50%",background:"#c53030",border:"2px solid #0d1117"}}/>}
           </button>
         </div>
-        {fOpen&&<div style={{display:"flex",gap:6,flexWrap:"wrap",marginTop:10,paddingTop:10,borderTop:"1px solid rgba(255,255,255,0.06)"}}>
-          {ALL_CATS.map(c=><button key={c} className={`chip-mobile ${filt===c?"active":"inactive"}`} onClick={()=>{setFilt(c);setFOpen(false);setExpCard(null);}}>{c}</button>)}
-        </div>}
+        {fOpen&&<div style={{display:"flex",gap:6,flexWrap:"wrap",marginTop:10,paddingTop:10,borderTop:"1px solid rgba(255,255,255,0.06)"}}>{ALL_CATS.map(c=><button key={c} className={`chip-mobile ${filt===c?"active":"inactive"}`} onClick={()=>{setFilt(c);setFOpen(false);setExpCard(null);}}>{c}</button>)}</div>}
       </div>
       <div style={{position:"relative",zIndex:1,padding:"0 16px 100px"}}>
-        {yg.map(([yr,evts])=><div key={yr}>
-          <div style={{position:"sticky",top:60,zIndex:10,display:"flex",alignItems:"center",gap:10,padding:"16px 0 12px",background:"#0d1117"}}>
-            <div style={{fontFamily:"Georgia,serif",fontSize:20,fontWeight:900,color:"#c53030"}}>{yr}</div>
-            <div style={{flex:1,height:1,background:"rgba(255,255,255,0.08)"}}/>
-            <div style={{fontSize:10,color:"rgba(255,255,255,0.3)"}}>{evts.length} event{evts.length!==1?"s":""}</div>
-          </div>
-          {evts.map(ev=><MobCard key={ev.id} ev={ev} isExp={expCard===ev.id} onClick={()=>{if(expCard!==ev.id)setExpCard(ev.id);else{setSelId(ev.id);setDet(true);}}}/>)}
-        </div>)}
+        {yg.map(([yr,evts])=><div key={yr}><div style={{position:"sticky",top:60,zIndex:10,display:"flex",alignItems:"center",gap:10,padding:"16px 0 12px",background:"#0d1117"}}><div style={{fontFamily:"Georgia,serif",fontSize:20,fontWeight:900,color:"#c53030"}}>{yr}</div><div style={{flex:1,height:1,background:"rgba(255,255,255,0.08)"}}/><div style={{fontSize:10,color:"rgba(255,255,255,0.3)"}}>{evts.length} event{evts.length!==1?"s":""}</div></div>
+          {evts.map(ev=><MobCard key={ev.id} ev={ev} isExp={expCard===ev.id} onShare={onShare} onClick={()=>{if(expCard!==ev.id)setExpCard(ev.id);else{setSelId(ev.id);setDet(true);}}}/>)}</div>)}
       </div>
       <Start vis={start} onGo={()=>setStart(false)} mob={true}/>
-      {det&&selEv&&<BSheet ev={selEv} onClose={()=>setDet(false)} onNext={nxt} onPrev={prv} hasN={selIdx<fil.length-1} hasP={selIdx>0}/>}
+      {det&&selEv&&<BSheet ev={selEv} onClose={()=>setDet(false)} onNext={nxt} onPrev={prv} hasN={selIdx<fil.length-1} hasP={selIdx>0} onShare={onShare}/>}
+      {shareEv&&<ShareModal event={shareEv} onClose={()=>setShareEv(null)}/>}
     </div>
   );
 
-  // ─── DESKTOP ───────────────────────────────────────────────────────
-  const cL=sI.l>10, cR=sI.l<sI.m-10;
-  return (
+  const cL=sI.l>10,cR=sI.l<sI.m-10;
+  return(
     <div style={{width:"100%",height:"100vh",background:"#0d1117",position:"relative",overflow:"hidden",fontFamily:"-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif"}}>
       <div style={{position:"absolute",inset:0,background:"radial-gradient(ellipse at 70% 40%,#2a1a0a 0%,#0d1117 70%)",opacity:0.5}}/>
       <div style={{position:"absolute",inset:0,background:"rgba(10,14,35,0.5)",zIndex:0}}/>
-
       <div style={{position:"absolute",top:0,left:0,right:0,zIndex:40,display:"flex",alignItems:"center",justifyContent:"space-between",padding:"12px 16px",background:"linear-gradient(to bottom,rgba(13,17,23,0.85) 0%,rgba(13,17,23,0.4) 70%,transparent 100%)",pointerEvents:"none"}}>
         <h1 style={{fontFamily:"Georgia,serif",fontSize:16,fontWeight:700,color:"#e8e0d4",letterSpacing:"0.3px",margin:0,whiteSpace:"nowrap",pointerEvents:"auto"}}>Timeline of the American Revolution</h1>
-        <div style={{display:"flex",alignItems:"center",gap:6,flexWrap:"wrap",pointerEvents:"auto"}}>
-          <Ico type="filter" size={14}/>
-          {ALL_CATS.map(c=><button key={c} className={`chip ${filt===c?"active":"inactive"}`} onClick={()=>{setFilt(c);setDet(false);setSelId(null);}}>{c}</button>)}
-        </div>
+        <div style={{display:"flex",alignItems:"center",gap:6,flexWrap:"wrap",pointerEvents:"auto"}}><Ico type="filter" size={14}/>{ALL_CATS.map(c=><button key={c} className={`chip ${filt===c?"active":"inactive"}`} onClick={()=>{setFilt(c);setDet(false);setSelId(null);}}>{c}</button>)}</div>
       </div>
-
       <div ref={sRef} onMouseDown={md} onMouseMove={mm} onMouseUp={()=>{setDrag(false);dRef.current=null;}} onMouseLeave={()=>{setDrag(false);dRef.current=null;}} onScroll={osc}
         style={{position:"absolute",inset:0,zIndex:20,overflowX:"auto",overflowY:"hidden",cursor:drag?"grabbing":"grab",userSelect:"none",scrollbarWidth:"thin"}}>
         <div style={{position:"relative",width:tW,height:cHt}}>
           <Axis ppY={ppY} aY={AY}/>
-          {lr.cards.map((ev,i)=><TCard key={`${ev.id}-${tier}`} ev={ev} idx={i} lp={ev.leftPos} side={ev.side} lane={ev.lane} aY={AY} isSel={!start&&ev.id===selId} onClick={()=>{if(!wdRef.current){setSelId(ev.id);setDet(true);setStart(false);}}} cW={cW} cH={cH} tier={tier} hId={hId} setH={setHId}/>)}
-          {lr.badges.map(b=>{
-            const cc=lr.cards.filter(e=>e.clusterId===b.cid);let ml=0;cc.forEach(c=>{if(c.side==="bottom")ml=Math.max(ml,c.lane);});
-            const bt=AY+CG+ml*(cH+12)+cH+16;let bx=b.cx;for(let y=SY;y<=EY;y++){if(Math.abs(bx-gp(y,1,ppY))<40){bx=gp(y,1,ppY)+50;break;}}
-            return(<div key={`b-${b.cid}`} onClick={e=>{e.stopPropagation();expClust(b.cid);}} style={{position:"absolute",left:bx,top:bt,transform:"translateX(-50%)",zIndex:25,cursor:"pointer"}}>
-              <div style={{background:"linear-gradient(135deg,#c53030,#9b2c2c)",color:"#fff",fontSize:10,fontWeight:700,padding:"5px 14px",borderRadius:14,whiteSpace:"nowrap",boxShadow:"0 2px 10px rgba(192,57,43,0.4)",display:"flex",alignItems:"center",gap:6,transition:"transform 0.2s"}}
-                onMouseEnter={e=>e.currentTarget.style.transform="scale(1.08)"} onMouseLeave={e=>e.currentTarget.style.transform="scale(1)"}>
-                +{b.hc} more <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-              </div>
-            </div>);
-          })}
+          {lr.cards.map((ev,i)=><TCard key={`${ev.id}-${tier}`} ev={ev} idx={i} lp={ev.leftPos} side={ev.side} lane={ev.lane} aY={AY} isSel={!start&&ev.id===selId} onClick={()=>{if(!wdRef.current){setSelId(ev.id);setDet(true);setStart(false);}}} cW={cW} cH={cH} tier={tier} hId={hId} setH={setHId} onShare={onShare}/>)}
+          {lr.badges.map(b=>{const cc=lr.cards.filter(e=>e.clusterId===b.cid);let ml=0;cc.forEach(c=>{if(c.side==="bottom")ml=Math.max(ml,c.lane);});const bt=AY+CG+ml*(cH+12)+cH+16;let bx=b.cx;for(let y=SY;y<=EY;y++){if(Math.abs(bx-gp(y,1,ppY))<40){bx=gp(y,1,ppY)+50;break;}}
+            return(<div key={`b-${b.cid}`} onClick={e=>{e.stopPropagation();expClust(b.cid);}} style={{position:"absolute",left:bx,top:bt,transform:"translateX(-50%)",zIndex:25,cursor:"pointer"}}><div style={{background:"linear-gradient(135deg,#c53030,#9b2c2c)",color:"#fff",fontSize:10,fontWeight:700,padding:"5px 14px",borderRadius:14,whiteSpace:"nowrap",boxShadow:"0 2px 10px rgba(192,57,43,0.4)",display:"flex",alignItems:"center",gap:6,transition:"transform 0.2s"}} onMouseEnter={e=>e.currentTarget.style.transform="scale(1.08)"} onMouseLeave={e=>e.currentTarget.style.transform="scale(1)"}>+{b.hc} more <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div></div>);})}
         </div>
       </div>
-
       {!det&&cL&&<button className="edge-arrow left" onClick={pL}><Ico type="chevL" size={22}/></button>}
       {!det&&cR&&<button className="edge-arrow right" onClick={pR}><Ico type="chevR" size={22}/></button>}
-
       <div style={{position:"absolute",left:0,bottom:0,right:0,zIndex:40,display:"flex",alignItems:"center",justifyContent:"center",gap:12,background:"rgba(10,14,35,0.85)",backdropFilter:"blur(12px)",borderTop:"1px solid rgba(255,255,255,0.1)",padding:"8px 16px"}}>
         <button className="zbtn" onClick={zo}><Ico type="minus" size={12}/></button>
         <div style={{fontSize:10,color:"#fff",fontWeight:500,padding:"4px 10px",background:"rgba(0,0,0,0.4)",borderRadius:4,border:"1px solid rgba(255,255,255,0.2)",textAlign:"center",minWidth:42}}>{Math.round(zl*100)}%</div>
@@ -464,9 +438,9 @@ function App() {
         <div style={{width:1,height:20,background:"rgba(255,255,255,0.15)",margin:"0 4px"}}/>
         <button className="zbtn" onClick={()=>{setStart(true);setDet(false);setSelId(null);}}><Ico type="home" size={12}/></button>
       </div>
-
       <Start vis={start} onGo={()=>setStart(false)} mob={false}/>
-      {det&&!start&&<Detail ev={selEv} onNext={nxt} onPrev={prv} onClose={()=>setDet(false)}/>}
+      {det&&!start&&<Detail ev={selEv} onNext={nxt} onPrev={prv} onClose={()=>setDet(false)} onShare={onShare}/>}
+      {shareEv&&<ShareModal event={shareEv} onClose={()=>setShareEv(null)}/>}
     </div>
   );
 }
